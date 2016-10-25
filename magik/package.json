@@ -1,0 +1,26 @@
+{
+    "name": "magik",
+    "displayName": "magik-wand",
+    "description": "smallworld magik language support",
+    "version": "0.0.1",
+    "publisher": "jnoortheen",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "magik",
+            "aliases": ["Magik", "magik"],
+            "extensions": [".magik",".Magik",".MAGIK"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "magik",
+            "scopeName": "source.magik",
+            "path": "./syntaxes/magik.tmLanguage"
+        }]
+    }
+}
