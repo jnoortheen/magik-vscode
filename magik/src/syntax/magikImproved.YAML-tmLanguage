@@ -1,0 +1,103 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+comment: syntax highlight with correct scopes for magik
+name: Magik
+scopeName: source.magik
+fileTypes: [magik, Magik, MAGIK]
+uuid: a451e5fa-5ef0-47cb-8f77-57d09e40b794
+
+patterns:
+- comment: public comment, docstring TODO fix this not working
+  name: comment.line.language.magik
+  match: (##).*$\n?
+  captures:
+    '1': {name: punctuation.definition.comment.magik}
+    '3': {name: comment.line.number-sign.magik}
+
+- comment: a single line comment
+  name: comment.line.number-sign.magik
+  match: ^(#)(?!##).*$\n?
+  captures:
+    '1': {name: punctuation.definition.comment.magik}
+
+- name: constant.numeric.integer.magik
+  match: \b([1-9]+[0-9]*|0)\b
+
+- comment: radix integer - integer with any base, exponent form or float TODO split this
+  name: constant.numeric.complex.magik
+  match: \b(\d+(?i:(e|r|\&|\.))\d*)\b
+
+- comment: character literal like %a, %b ... 
+  name: constant.character.literal.magik
+  match: (%)(.)\b
+
+- comment: unicode character like %u000e ... 
+  name: constant.character.unicode.magik
+  match: (%u)(.)+\b
+
+- comment: character name like %newline ... 
+  name: constant.character.unicode.magik
+  match: (%)(.)+\b
+
+- comment: symbols like :a_symbol
+  name: variable.other.symbol.magik
+  match: (:)(\w+)\b
+  captures:
+      '0': {name: constant.other.symbol.magik}
+
+- comment: symbols like :|a symbol|
+  name: variable.other.symbol.canonical.magik
+  begin: (:\|)
+  end: (\|)
+  captures:
+      '0': {name: constant.other.symbol.magik}
+
+- comment: simple vectors
+  name: meta.structure.vector.magik
+  match: (\{)(.*)(\})
+  captures:
+    '1': {name: punctuation.definition.tuple.begin.python}
+    '2': {name: meta.empty-tuple.python}
+    '3': {name: punctuation.definition.tuple.end.python}
+
+- name: keyword.operator.comparison.magik
+  match: <\=|>\=|\=\=|<|>|\!\=
+
+- name: keyword.operator.assignment.augmented.magik
+  match: \+<<|-<<|\*<<|/<<
+
+- name: keyword.operator.arithmetic.magik
+  match: \+|\-|\*|\*\*|/|&|\||\^|~
+
+- name: keyword.operator.assignment.magik
+  match: (<<)
+
+
+repository:
+  string_quoted_double:
+    patterns:
+    - comment: double quoted string single line
+      name: string.quoted.double.magik
+      begin: (")
+      beginCaptures:
+        '1': {name: punctuation.definition.string.begin.magik}
+      end: ((?<=")(")|")|(\n)
+      endCaptures:
+        '1': {name: punctuation.definition.string.end.magik}
+        '2': {name: meta.empty-string.double.magik}
+        '3': {name: invalid.illegal.unclosed-string.magik}
+  string_quoted_single:
+    patterns:
+    - comment: single quoted string single line
+      name: string.quoted.single.magik
+      begin: (')
+      beginCaptures:
+        '1': {name: punctuation.definition.string.begin.magik}
+      end: ((?<=')(')|')|(\n)
+      endCaptures:
+        '1': {name: punctuation.definition.string.end.magik}
+        '2': {name: meta.empty-string.double.magik}
+        '3': {name: invalid.illegal.unclosed-string.magik}
+  strings:
+    patterns:
+    - include: '#string_quoted_double'
+    - include: '#string_quoted_single'
