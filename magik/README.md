@@ -62,4 +62,9 @@ Added features X, Y, and Z.
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+##Resources:
+
+###for creating tmLanguage syntax definition this site has helped a lot 
+[textmate manual](http://manual.macromates.com/en/) and 
+[](http://manual.macromates.com/en/language_grammars#naming_conventions)
+https://github.com/dmikalova/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet
