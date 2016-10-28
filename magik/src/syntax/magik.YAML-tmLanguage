@@ -1,0 +1,178 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+comment: syntax highlight with correct scopes for magik
+name: Magik
+scopeName: source.magik
+fileTypes: [magik, Magik, MAGIK]
+uuid: a451e5fa-5ef0-47cb-8f77-57d09e40b794
+
+patterns:
+
+- comment: public comment, docstring
+  name: comment.block.documentation.magik
+  match: (##).*$\n?
+  captures:
+    '1': {name: punctuation.definition.comment.magik}
+    '3': {name: comment.line.number-sign.magik}
+
+- comment: encoding details
+  name: comment.encode.magik
+  match: (#%).*$\n?
+  captures:
+    '1': {name: punctuation.definition.comment.magik}
+    '3': {name: comment.line.number-sign.magik}
+
+- comment: a single line comment
+  name: comment.line.number-sign.magik
+  match: ^(#)(?!((##)|(#%))).*$\n?
+  captures:
+    '1': {name: punctuation.definition.comment.magik}
+
+- name: constant.numeric.integer.magik
+  match: \b([1-9]+[0-9]*|0)\b
+
+- comment: radix integer - integer with any base, exponent form or float TODO split this
+  name: constant.numeric.complex.magik
+  match: \b(\d+(?i:(e|r|\&|\.))\d*)\b
+
+- comment: character literal like %a, %b ... 
+  name: constant.character.literal.magik
+  match: (%)(.)\b
+
+- comment: unicode character like %u000e ... 
+  name: constant.character.unicode.magik
+  match: (%u)(.)+\b
+
+- comment: character name like %newline ... 
+  name: constant.character.magik
+  match: (%)(.)+\b
+
+- comment: symbols like :a_symbol
+  name: variable.other.symbol.magik
+  match: (:)(\w+)\b
+
+- comment: lebel or global variable expression
+  name: variable.other.label.magik
+  match: (\@\w+)\b
+
+- comment: dynamic variable
+  name: variable.other.dynamic.magik
+  match: (\!\w+)\b
+
+- comment: boolean variable
+  name: variable.other.bool.magik
+  match: \b(\w+)(\?)
+
+- comment: symbols like :|a symbol|
+  name: variable.other.symbol.canonical.magik
+  begin: (:\|)
+  end: (\|)
+
+- comment: simple vectors
+  name: meta.structure.vector.magik
+  match: (\{)(.*)(\})
+  captures:
+    '1': {name: punctuation.definition.tuple.begin.magik}
+    '2': {name: meta.empty-tuple.magik}
+    '3': {name: punctuation.definition.tuple.end.magik}
+
+- comment: keyword operators that evaluate to True or False
+  name: keyword.operator.logical.magik
+  match: \b(_and|_andif|_not|_or|_orif|_xor)\b
+
+- name: keyword.operator.comparison.magik
+  match: \b(<\=|>\=|\=\=|>|\!\=|_cf|_is|_isnt|<>)\b
+
+- name: keyword.operator.assignment.augmented.magik
+  match: \+<<|-<<|\*<<|/<<
+
+- name: keyword.operator.arithmetic.magik
+  match: \+|\-|\*|\*\*|/|\||\^|\~|(_div)|(_mod)
+
+- name: keyword.operator.assignment.magik
+  match: (<<)
+
+- name: constant.language.magik
+  match: \b(_true|_false|_maybe|_unset|_no_way|_thisthread|_constant)\b
+
+- name: variable.language.magik
+  match: \b(_self|_clone|_super)\b
+
+- comment: keywords that delimit flow blocks or alter flow from within a block
+  name: keyword.control.flow.magik
+  match: \b(_leave|_elif|_else|_when|_for|_if|_try|_with|_continue|_return|_catch|_endcatch|_endif|_endlock|_endloop|_endprotect|_endtry|_lock|_loop|_loopbody|_over|_protect|_protection|_then)\b
+
+- comment: functions
+  name: storage.type.function.magik
+  match: \b(_block|_method|_proc|_endblock|_endmethod|_endproc)\b
+
+- comment: function modifiers
+  name: storage.modifier.magik
+  match: \b(_abstract|_iter|_private)\b
+
+- name: keyword.other.magik
+  comment: keywords that haven't fit into other groups (yet).
+  match: \b(_dynamic|_finally|_global|_handling|_import|_local|_recursive|_throw)\b
+
+- name: constant.language.package.magik
+  match: (_package)\s(\w+)
+
+- name: keyword.other.args.magik
+  comment: keywords that haven't fit into other groups (yet).
+  match: \b(_allresults|_scatter|_gather|_optional)\b
+
+- name: keyword.other.pragma.magik
+  comment: keywords that haven't fit into other groups (yet).
+  match: \b(_pragma)\b
+  captures:
+    '1': {name: entity.name.tag}
+
+- name: keyword.other.misc.magik
+  comment: standard procs
+  match: \b(write|print|show)\b
+
+- comment: slots, functions that starts with .
+  name: entity.name.slot.magik
+  match: (\.)([a-z]\w+)
+
+- begin: (\()
+  end: (\))
+  patterns:
+  - include: $self
+
+- include: '#string_quoted_single'
+- include: '#string_quoted_double'
+
+repository:
+  string_quoted_double:
+    patterns:
+    - comment: double quoted string single line
+      name: string.quoted.double.magik
+      begin: (")
+      beginCaptures:
+        '1': {name: punctuation.definition.string.begin.magik}
+      end: ((?<=")(")|")|(\n)
+      endCaptures:
+        '1': {name: punctuation.definition.string.end.magik}
+        '2': {name: meta.empty-string.double.magik}
+        '3': {name: invalid.illegal.unclosed-string.magik}
+  string_quoted_single:
+    patterns:
+    - comment: single quoted string single line
+      name: string.quoted.single.magik
+      begin: (')
+      beginCaptures:
+        '1': {name: punctuation.definition.string.begin.magik}
+      end: ((?<=')(')|')|(\n)
+      endCaptures:
+        '1': {name: punctuation.definition.string.end.magik}
+        '2': {name: meta.empty-string.double.magik}
+        '3': {name: invalid.illegal.unclosed-string.magik}
+  strings:
+    patterns:
+    - include: '#string_quoted_double'
+    - include: '#string_quoted_single'
+
+firstLineMatch: ^#%.*\b
+foldingStartMarker: ^(_block|_catch|_if|_elif|_else|_lock|_loop|_method|_proc|_protect|_try)
+foldingStopMarker: ^(_endblock|_endcatch|_endif|_endlock|_endloop|_endmethod|_endproc|_endprotect|_endtry)
+keyEquivalent: ^~P

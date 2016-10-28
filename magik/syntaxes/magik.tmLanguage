@@ -2,305 +2,433 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>comment</key>
+	<string>syntax highlight with correct scopes for magik</string>
 	<key>fileTypes</key>
 	<array>
 		<string>magik</string>
 		<string>Magik</string>
 		<string>MAGIK</string>
 	</array>
+	<key>firstLineMatch</key>
+	<string>^#%.*\b</string>
+	<key>foldingStartMarker</key>
+	<string>^(_block|_catch|_if|_elif|_else|_lock|_loop|_method|_proc|_protect|_try)</string>
+	<key>foldingStopMarker</key>
+	<string>^(_endblock|_endcatch|_endif|_endlock|_endloop|_endmethod|_endproc|_endprotect|_endtry)</string>
+	<key>keyEquivalent</key>
+	<string>^~P</string>
 	<key>name</key>
 	<string>Magik</string>
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>include</key>
-			<string>#docstrings</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#comments</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#encodings</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#blocks</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#builtins</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#keywords</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#methods</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#numbers</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#operators</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#packages</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#strings</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#strings_</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#symbols</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#booleans</string>
-		</dict>
-	</array>
-	<key>repository</key>
-	<dict>
-		<key>booleans</key>
-		<dict>
 			<key>captures</key>
 			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>variable.other.magik</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>([a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*)\?)</string>
-			<key>name</key>
-			<string>variable.other.magik</string>
-		</dict>
-		<key>builtins</key>
-		<dict>
-			<key>include</key>
-			<string>#self</string>
-			<key>match</key>
-			<string>\b(def_slotted_exemplar|def_package|define_shared_constant)\b</string>
-			<key>name</key>
-			<string>support.function.magik</string>
-		</dict>
-		<key>chars</key>
-		<dict>
-			<key>begin</key>
-			<string>(%)</string>
-			<key>end</key>
-			<string>(\s+)</string>
-			<key>name</key>
-			<string>constant.character.magik</string>
-		</dict>
-		<key>comments</key>
-		<dict>
-			<key>begin</key>
-			<string>(#)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.comment.magik</string>
 				</dict>
-			</dict>
-			<key>end</key>
-			<string>\n</string>
-			<key>name</key>
-			<string>comment.line.number-sign.magik</string>
-		</dict>
-		<key>docstrings</key>
-		<dict>
-			<key>begin</key>
-			<string>(##)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>comment.line.number-sign.magik</string>
 				</dict>
 			</dict>
-			<key>end</key>
-			<string>\n</string>
+			<key>comment</key>
+			<string>public comment, docstring</string>
+			<key>match</key>
+			<string>(##).*$\n?</string>
 			<key>name</key>
 			<string>comment.block.documentation.magik</string>
 		</dict>
-		<key>encodings</key>
 		<dict>
-			<key>begin</key>
-			<string>(#%)</string>
-			<key>end</key>
-			<string>\n</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.magik</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>comment.line.number-sign.magik</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>encoding details</string>
+			<key>match</key>
+			<string>(#%).*$\n?</string>
 			<key>name</key>
-			<string>comment.line.percentage.magik</string>
+			<string>comment.encode.magik</string>
 		</dict>
-		<key>illegal</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.magik</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>a single line comment</string>
+			<key>match</key>
+			<string>^(#)(?!((##)|(#%))).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.number-sign.magik</string>
+		</dict>
 		<dict>
 			<key>match</key>
-			<string>([^\s}])</string>
+			<string>\b([1-9]+[0-9]*|0)\b</string>
 			<key>name</key>
-			<string>invalid.illegal.unrecognized.magik</string>
+			<string>constant.numeric.integer.magik</string>
 		</dict>
-		<key>keywords</key>
 		<dict>
+			<key>comment</key>
+			<string>radix integer - integer with any base, exponent form or float TODO split this</string>
 			<key>match</key>
-			<string>\b(\_[a-zA-Z]+)\b</string>
+			<string>\b(\d+(?i:(e|r|\&amp;|\.))\d*)\b</string>
 			<key>name</key>
-			<string>keyword.control.magik</string>
+			<string>constant.numeric.complex.magik</string>
 		</dict>
-		<key>methods</key>
+		<dict>
+			<key>comment</key>
+			<string>character literal like %a, %b ...</string>
+			<key>match</key>
+			<string>(%)(.)\b</string>
+			<key>name</key>
+			<string>constant.character.literal.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>unicode character like %u000e ...</string>
+			<key>match</key>
+			<string>(%u)(.)+\b</string>
+			<key>name</key>
+			<string>constant.character.unicode.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>character name like %newline ...</string>
+			<key>match</key>
+			<string>(%)(.)+\b</string>
+			<key>name</key>
+			<string>constant.character.unicode.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>symbols like :a_symbol</string>
+			<key>match</key>
+			<string>(:)(\w+)\b</string>
+			<key>name</key>
+			<string>variable.other.symbol.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>lebel or global variable expression</string>
+			<key>match</key>
+			<string>(\@\w+)\b</string>
+			<key>name</key>
+			<string>variable.other.label.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>dynamic variable</string>
+			<key>match</key>
+			<string>(\!\w+)\b</string>
+			<key>name</key>
+			<string>variable.other.dynamic.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>boolean variable</string>
+			<key>match</key>
+			<string>\b(\w+)(\?)</string>
+			<key>name</key>
+			<string>variable.other.bool.magik</string>
+		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(\w+)\s*\(</string>
+			<string>(:\|)</string>
+			<key>comment</key>
+			<string>symbols like :|a symbol|</string>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\|)</string>
 			<key>name</key>
-			<string>entity.name.function.magik</string>
+			<string>variable.other.symbol.canonical.magik</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tuple.begin.magik</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.empty-tuple.magik</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tuple.end.magik</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>simple vectors</string>
+			<key>match</key>
+			<string>(\{)(.*)(\})</string>
+			<key>name</key>
+			<string>meta.structure.vector.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keyword operators that evaluate to True or False</string>
+			<key>match</key>
+			<string>\b(_and|_andif|_not|_or|_orif|_xor)\b</string>
+			<key>name</key>
+			<string>keyword.operator.logical.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(&lt;\=|&gt;\=|\=\=|&gt;|\!\=|_cf|_is|_isnt|&lt;&gt;)\b</string>
+			<key>name</key>
+			<string>keyword.operator.comparison.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\+&lt;&lt;|-&lt;&lt;|\*&lt;&lt;|/&lt;&lt;</string>
+			<key>name</key>
+			<string>keyword.operator.assignment.augmented.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\+|\-|\*|\*\*|/|\||\^|\~|(_div)|(_mod)</string>
+			<key>name</key>
+			<string>keyword.operator.arithmetic.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(&lt;&lt;)</string>
+			<key>name</key>
+			<string>keyword.operator.assignment.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(_true|_false|_maybe|_unset|_no_way|_thisthread|_constant)\b</string>
+			<key>name</key>
+			<string>constant.language.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(_self|_clone|_super)\b</string>
+			<key>name</key>
+			<string>variable.language.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords that delimit flow blocks or alter flow from within a block</string>
+			<key>match</key>
+			<string>\b(_leave|_elif|_else|_when|_for|_if|_try|_with|_continue|_return|_catch|_endcatch|_endif|_endlock|_endloop|_endprotect|_endtry|_lock|_loop|_loopbody|_over|_protect|_protection|_then)\b</string>
+			<key>name</key>
+			<string>keyword.control.flow.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>functions</string>
+			<key>match</key>
+			<string>\b(_block|_method|_proc|_endblock|_endmethod|_endproc)\b</string>
+			<key>name</key>
+			<string>storage.type.function.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>function modifiers</string>
+			<key>match</key>
+			<string>\b(_abstract|_iter|_private)\b</string>
+			<key>name</key>
+			<string>storage.modifier.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords that haven't fit into other groups (yet).</string>
+			<key>match</key>
+			<string>\b(_dynamic|_finally|_global|_handling|_import|_local|_recursive|_throw)\b</string>
+			<key>name</key>
+			<string>keyword.other.magik</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(_package)\s(\w+)</string>
+			<key>name</key>
+			<string>constant.language.package.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords that haven't fit into other groups (yet).</string>
+			<key>match</key>
+			<string>\b(_allresults|_scatter|_gather|_optional)\b</string>
+			<key>name</key>
+			<string>keyword.other.args.magik</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>keywords that haven't fit into other groups (yet).</string>
+			<key>match</key>
+			<string>\b(_pragma)\b</string>
+			<key>name</key>
+			<string>keyword.other.pragma.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>standard procs</string>
+			<key>match</key>
+			<string>\b(write|print|show)\b</string>
+			<key>name</key>
+			<string>keyword.other.misc.magik</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>slots, functions that starts with .</string>
+			<key>match</key>
+			<string>(\.)([a-z]\w+)</string>
+			<key>name</key>
+			<string>entity.name.slot.magik</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(\()</string>
+			<key>end</key>
+			<string>(\))</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#blocks</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#symbols</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#packages</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#numbers</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#builtins</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strings</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strings_</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#docstrings</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#parameters</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#self</string>
+					<string>$self</string>
 				</dict>
 			</array>
 		</dict>
-		<key>numbers</key>
 		<dict>
-			<key>match</key>
-			<string>\b[0-9]+\b</string>
-			<key>name</key>
-			<string>constant.numeric.magik</string>
+			<key>include</key>
+			<string>#string_quoted_single</string>
 		</dict>
-		<key>operators</key>
 		<dict>
-			<key>match</key>
-			<string>([&lt;&lt;|&gt;&gt;|\-|\+|\*|/|=|&lt;&gt;|~])</string>
-			<key>name</key>
-			<string>keyword.operator.magik</string>
+			<key>include</key>
+			<string>#string_quoted_double</string>
 		</dict>
-		<key>packages</key>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>string_quoted_double</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>begin</key>
+					<string>(")</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.magik</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>double quoted string single line</string>
+					<key>end</key>
+					<string>((?&lt;=")(")|")|(\n)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.magik</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.empty-string.double.magik</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.unclosed-string.magik</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>keyword.other.magik</string>
+					<string>string.quoted.double.magik</string>
 				</dict>
-				<key>1</key>
+			</array>
+		</dict>
+		<key>string_quoted_single</key>
+		<dict>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>begin</key>
+					<string>(')</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.magik</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>single quoted string single line</string>
+					<key>end</key>
+					<string>((?&lt;=')(')|')|(\n)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.magik</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.empty-string.double.magik</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.unclosed-string.magik</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>storage.modifier.magik</string>
+					<string>string.quoted.single.magik</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>(\w+:\w+)|((_package)\s(\w+))</string>
-			<key>name</key>
-			<string>storage.modifier.magik</string>
-		</dict>
-		<key>parameters</key>
-		<dict>
-			<key>match</key>
-			<string>\w+</string>
-			<key>name</key>
-			<string>variable.parameter.magik</string>
-		</dict>
-		<key>self</key>
-		<dict>
-			<key>match</key>
-			<string>\b(_self)\b</string>
-			<key>name</key>
-			<string>variable.language.magik</string>
+			</array>
 		</dict>
 		<key>strings</key>
 		<dict>
-			<key>begin</key>
-			<string>(\")</string>
-			<key>end</key>
-			<string>(\")</string>
-			<key>name</key>
-			<string>string.quoted.double.magik</string>
-		</dict>
-		<key>strings_</key>
-		<dict>
-			<key>begin</key>
-			<string>(\')</string>
-			<key>end</key>
-			<string>(\')</string>
-			<key>name</key>
-			<string>string.quoted.single.magik</string>
-		</dict>
-		<key>symbols</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>constant.other.symbol.magik</string>
+					<key>include</key>
+					<string>#string_quoted_double</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>(:[a-zA-Z]+(([0-9]|_|-|[a-zA-Z])*))</string>
-			<key>name</key>
-			<string>variable.other.magik</string>
+				<dict>
+					<key>include</key>
+					<string>#string_quoted_single</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
