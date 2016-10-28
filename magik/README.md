@@ -68,3 +68,6 @@ Added features X, Y, and Z.
 [textmate manual](http://manual.macromates.com/en/) and 
 [](http://manual.macromates.com/en/language_grammars#naming_conventions)
 https://github.com/dmikalova/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet
+http://manual.macromates.com/en/regular_expressions#syntax_oniguruma
+http://manual.macromates.com/en/language_grammars#language_rules
+http://www.regexr.com/
