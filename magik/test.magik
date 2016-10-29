@@ -1,0 +1,66 @@
+#%encode
+_package sw
+$
+
+_pragma(classify_level=basic, topic={basic}, usage={basic})
+_method class_name.new(arg1, )
+	##
+	## exemplar new method 
+	##
+	## Input parameters:
+	## arg1 -  
+	##  
+	_self.
+
+	_return _clone.init(arg1?, )
+_endmethod
+$
+
+_pragma(classify_level=basic, topic={basic}, usage={basic})
+_iter _method class_name.method_name(arg1, )
+	##
+	## method description 
+	##
+	## Input parameters:
+	## arg1 -  
+	##  
+
+	
+_endmethod
+$
+
+# 0.00048804283142089844 - with extract all completions 
+class_name.fsf
+-1234
+124123
+
+0.400
+"some double quoted"
+{"sd", "sdf"}
+"single quoted"
+:sdf 
+"songle"
+:|sdf| :|sddf()|
+%uni
+%u
+l _cf anoter
+1 _isnt _unset
+_div 
+_and _andif
+ @mode
+ !dynamic_variable
+ bool?
+
+ _true
+seer.sd
+_allresults _if condition
+_then
+	
+_endif
+
+write()
+print()
+
+list[1]
+
+'single quoted string'
