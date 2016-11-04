@@ -9,8 +9,7 @@ _method class_name.new(arg1, )
 	##
 	## Input parameters:
 	## arg1 -  
-	##  
-	_self.
+	## 
 
 	_return _clone.init(arg1?, )
 _endmethod
@@ -23,8 +22,7 @@ _iter _method class_name.method_name(arg1, )
 	##
 	## Input parameters:
 	## arg1 -  
-	##  
-
+	## 
 	
 _endmethod
 $
