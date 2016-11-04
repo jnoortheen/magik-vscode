@@ -24,7 +24,7 @@
         }],
         "themes": [{
             "label": "NJN MagikWand",
-            "uiTheme": "vs", // use "vs" to select the light UI theme
+            "uiTheme": "vs",
             "path": "./themes/njn_magik_wand.tmTheme"
         }]
 
