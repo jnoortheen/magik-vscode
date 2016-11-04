@@ -14,13 +14,19 @@
         "languages": [{
             "id": "magik",
             "aliases": ["Magik", "magik"],
-            "extensions": [".magik",".Magik",".MAGIK"],
+            "extensions": [".magik", ".Magik", ".MAGIK"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "magik",
             "scopeName": "source.magik",
             "path": "./syntaxes/magik.tmLanguage"
+        }],
+        "themes": [{
+            "label": "NJN MagikWand",
+            "uiTheme": "vs", // use "vs" to select the light UI theme
+            "path": "./themes/njn_magik_wand.tmTheme"
         }]
+
     }
 }
