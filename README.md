@@ -2,15 +2,13 @@
 
 Smallworld Magik language extension for VS Code.
 
-## Test Out
+## Installation From Repository
 
 - Clone this repository
 - Open repo in VS code by 
     ```$code .``` 
 - Press F5 to start a new VS Code window with extension loaded
-- When you are satisfied and want to install the extension, copy this folder to 
-    ```<user_home>/.vscode/extensions``` 
-    along other extensions
+- When you are satisfied and want to install the extension, copy this folder to ```<user_home>/.vscode/extensions``` along other extensions
 
 ***Note***: 
     For list of extension features refer the [Extension Readme](./magik/README.md)
