@@ -7,9 +7,12 @@ Custom language support for Smallworld Magik.
 1. Rich syntax support
 ![Magik syntax support]()
 
-2. Custom theme for magik which colorizes Magik specific keywords with different colors
-![Custom theme](http://)
- 
+1. Custom theme for magik which colorizes Magik specific keywords with different colors
+![NJN Magik Wand Theme](http://)
+
+1. Full fledged snippets support for keywords and common methods.
+![NJN Magik Wand Snippets](http://)
+
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
