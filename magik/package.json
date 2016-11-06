@@ -8,7 +8,7 @@
         "vscode": "^1.5.0"
     },
     "categories": [
-        "Languages"
+        "Languages", "Snippets", "Themes"
     ],
     "contributes": {
         "languages": [{
@@ -26,7 +26,14 @@
             "label": "NJN MagikWand",
             "uiTheme": "vs",
             "path": "./themes/njn_magik_wand.tmTheme"
+        }],
+        "snippets": [{
+            "language": "magik",
+            "path": "./snippets/magik.json"
         }]
 
     }
+    // "activationEvents": [
+    //     "onLanguage:magik"
+    // ]
 }
