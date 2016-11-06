@@ -1,0 +1,1479 @@
+{
+  "elif": {
+    "body": [
+      "_elif ${1:condition}", 
+      "_then", 
+      "\t"
+    ], 
+    "prefix": "elif", 
+    "description": "elif"
+  }, 
+  "too_few_args": {
+    "body": [
+      "too_few_args(${1:message}, ${2:private?})$0"
+    ], 
+    "prefix": "too_few_args", 
+    "description": "too_few_args"
+  }, 
+  "shallow_copy": {
+    "body": [
+      "shallow_copy()$0"
+    ], 
+    "prefix": "shallow_copy", 
+    "description": "shallow_copy"
+  }, 
+  "dependents_set": {
+    "body": [
+      "dependents_set(${1:force_existence?})$0"
+    ], 
+    "prefix": "dependents_set", 
+    "description": "dependents_set"
+  }, 
+  "over": {
+    "body": [
+      "_over ${1:range}", 
+      "_loop ${2:params}", 
+      "\t$3", 
+      "_endloop", 
+      ""
+    ], 
+    "prefix": "over", 
+    "description": "over"
+  }, 
+  "global": {
+    "body": [
+      "_global"
+    ], 
+    "prefix": "global", 
+    "description": "global"
+  }, 
+  "dynamic": {
+    "body": [
+      "_dynamic "
+    ], 
+    "prefix": "dynamic", 
+    "description": "dynamic"
+  }, 
+  "thisthread": {
+    "body": [
+      "_thisthread"
+    ], 
+    "prefix": "thisthread", 
+    "description": "thisthread"
+  }, 
+  "with_throw": {
+    "body": [
+      "_catch ${1:@label}", 
+      "$2", 
+      "_throw $3 _with ${4:return}", 
+      "$5", 
+      "_endcatch", 
+      "$0"
+    ], 
+    "prefix": "catch", 
+    "description": "with_throw"
+  }, 
+  "define_shared_constant": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      "${4:class_name}.define_shared_constant(:${5:shared_constant_name},", 
+      "\t##", 
+      "\t## ${7:shared constant docstring} ", 
+      "\t##", 
+      "", 
+      "\t${8:constant_value},", 
+      "\t:${9:public})", 
+      "\\$", 
+      ""
+    ], 
+    "prefix": "define_shared_constant", 
+    "description": "define_shared_constant"
+  }, 
+  "isnt": {
+    "body": [
+      "_isnt ${1:_unset}$0"
+    ], 
+    "prefix": "isnt", 
+    "description": "isnt"
+  }, 
+  "gds": {
+    "body": [
+      "gis_program_manager.cached_dataset(:gis)"
+    ], 
+    "prefix": "gds", 
+    "description": "gds"
+  }, 
+  "define_show_attributes": {
+    "body": [
+      "define_show_attributes(${1:_gather} ${2:list})$0"
+    ], 
+    "prefix": "define_show_attributes", 
+    "description": "define_show_attributes"
+  }, 
+  "define_condition_class": {
+    "body": [
+      "condition.define_condition(", 
+      "\t:${1:new_cond_name}, :${2:parent_condition_name},", 
+      "\t{:${3:arg1}, $4},", 
+      "\t'${5:message that to be printed when condition is raised}' )", 
+      "\\$"
+    ], 
+    "prefix": "conddefine", 
+    "description": "define_condition_class"
+  }, 
+  "finally": {
+    "body": [
+      "_finally _with ${2:val}", 
+      "$0"
+    ], 
+    "prefix": "finally", 
+    "description": "finally"
+  }, 
+  "define_shared_variable": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      "${4:class_name}.define_shared_variable(:${5:shared_variable_name},", 
+      "\t##", 
+      "\t## ${7:shared variable docstring} ", 
+      "\t##", 
+      "", 
+      "\t${8:variable_value},", 
+      "\t:${9:public})", 
+      "\\$", 
+      ""
+    ], 
+    "prefix": "define_shared_variable", 
+    "description": "define_shared_variable"
+  }, 
+  "with": {
+    "body": [
+      "_with ${1:cond}$0"
+    ], 
+    "prefix": "with", 
+    "description": "with"
+  }, 
+  "continuewith": {
+    "body": [
+      "_continue ${1:@label} _with ${2:val}", 
+      ""
+    ], 
+    "prefix": "continuewith", 
+    "description": "continuewith"
+  }, 
+  "w-plus": {
+    "body": [
+      "write('+++ ', $1, ' +++')$0"
+    ], 
+    "prefix": "w-plus", 
+    "description": "w-plus"
+  }, 
+  "naturally_ordered": {
+    "body": [
+      "naturally_ordered?$0"
+    ], 
+    "prefix": "naturally_ordered", 
+    "description": "naturally_ordered"
+  }, 
+  "init": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      "_method ${4:class_name}.init(${6:arg1}, $7)", 
+      "\t##", 
+      "\t## ${8:exemplar init method} ", 
+      "\t##", 
+      "\t## Input parameters:", 
+      "\t## ${6:arg1} - $9 ", 
+      "\t## $10 ", 
+      "", 
+      "\t$0", 
+      "\t_return _self", 
+      "_endmethod", 
+      "\\$", 
+      ""
+    ], 
+    "prefix": "method", 
+    "description": "init"
+  }, 
+  "continue": {
+    "body": [
+      "_continue "
+    ], 
+    "prefix": "continue", 
+    "description": "continue"
+  }, 
+  "method(name)": {
+    "body": [
+      "method(${1:name})$0"
+    ], 
+    "prefix": "method", 
+    "description": "method(name)"
+  }, 
+  "constant": {
+    "body": [
+      "_constant "
+    ], 
+    "prefix": "constant", 
+    "description": "constant"
+  }, 
+  "fast_keys_and_elements": {
+    "body": [
+      "fast_keys_and_elements()$0"
+    ], 
+    "prefix": "fke", 
+    "description": "fast_keys_and_elements"
+  }, 
+  "local": {
+    "body": [
+      "_local"
+    ], 
+    "prefix": "local", 
+    "description": "local"
+  }, 
+  "responds_to": {
+    "body": [
+      "responds_to?(:|${1:message_name}|, ${2: optional private?})"
+    ], 
+    "prefix": "responds_to", 
+    "description": "responds_to"
+  }, 
+  "property_list.new_with": {
+    "body": [
+      "property_list.new_with($1)$0"
+    ], 
+    "prefix": "plnw", 
+    "description": "property_list.new_with"
+  }, 
+  "then": {
+    "body": [
+      "_then "
+    ], 
+    "prefix": "then", 
+    "description": "then"
+  }, 
+  "return": {
+    "body": [
+      "_return "
+    ], 
+    "prefix": "return", 
+    "description": "return"
+  }, 
+  "global_auto_declare": {
+    "body": [
+      "!global_auto_declare?! << ${1:_false}", 
+      "\\$"
+    ], 
+    "prefix": "global_auto_declare", 
+    "description": "global_auto_declare"
+  }, 
+  "immediate_parents": {
+    "body": [
+      "immediate_parents$0"
+    ], 
+    "prefix": "immediate_parents", 
+    "description": "immediate_parents"
+  }, 
+  "identity_hash": {
+    "body": [
+      "identity_hash$0"
+    ], 
+    "prefix": "identity_hash", 
+    "description": "identity_hash"
+  }, 
+  "gpmdscoll": {
+    "body": [
+      "gis_program_manager.cached_dataset(:${1:gis}).collections[:${2:sheath}]$0"
+    ], 
+    "prefix": "gpmdscoll", 
+    "description": "gpmdscoll"
+  }, 
+  "handling": {
+    "body": [
+      "_handling ${1:error}", 
+      "_with _proc(${3:cond})", 
+      "\t$4", 
+      "_endproc$0"
+    ], 
+    "prefix": "handling", 
+    "description": "handling"
+  }, 
+  "private": {
+    "body": [
+      "_private "
+    ], 
+    "prefix": "private", 
+    "description": "private"
+  }, 
+  "import": {
+    "body": [
+      "_import "
+    ], 
+    "prefix": "import", 
+    "description": "import"
+  }, 
+  "not": {
+    "body": [
+      "_not "
+    ], 
+    "prefix": "not", 
+    "description": "not"
+  }, 
+  "is": {
+    "body": [
+      "_is ${1:_unset}$0"
+    ], 
+    "prefix": "is", 
+    "description": "is"
+  }, 
+  "mod": {
+    "body": [
+      "_mod "
+    ], 
+    "prefix": "mod", 
+    "description": "mod"
+  }, 
+  "trace_on": {
+    "body": [
+      "trace_on(${1:stream}, ${2:optional expand_n})$0"
+    ], 
+    "prefix": "trace_on", 
+    "description": "trace_on"
+  }, 
+  "fixme": {
+    "body": [
+      "# FIXME ${1:issue} added by ${2:tester_name} on ${3:01}/${4:06}/${5:2016}", 
+      "$0"
+    ], 
+    "prefix": "fixme", 
+    "description": "fixme"
+  }, 
+  "load_file": {
+    "body": [
+      "load_file(\"${1:dir_name}${2:\\}${3:file_name}.magik\")$0"
+    ], 
+    "prefix": "load_file", 
+    "description": "load_file"
+  }, 
+  "iter": {
+    "body": [
+      "_iter "
+    ], 
+    "prefix": "iter", 
+    "description": "iter"
+  }, 
+  "leave": {
+    "body": [
+      "_leave "
+    ], 
+    "prefix": "leave", 
+    "description": "leave"
+  }, 
+  "ife": {
+    "body": [
+      "_if ${1:condition}", 
+      "_then", 
+      "\t$2", 
+      "_else", 
+      "\t$3", 
+      "_endif", 
+      "$0"
+    ], 
+    "prefix": "ife", 
+    "description": "ife"
+  }, 
+  "keys_and_elements": {
+    "body": [
+      "_for ${1:a_val} _over ${2:collections}.${3:fast_keys_and_elements}()$4", 
+      "_loop", 
+      "\t$5", 
+      "_endloop", 
+      "$0"
+    ], 
+    "prefix": "for", 
+    "description": "keys_and_elements"
+  }, 
+  "leavewith": {
+    "body": [
+      "_leave ${1:@label} _with ${2:val}", 
+      ""
+    ], 
+    "prefix": "leavewith", 
+    "description": "leavewith"
+  }, 
+  "does_not_understand": {
+    "body": [
+      "does_not_understand(message,private?)"
+    ], 
+    "prefix": "does_not_understand", 
+    "description": "does_not_understand"
+  }, 
+  "div": {
+    "body": [
+      "_div "
+    ], 
+    "prefix": "div", 
+    "description": "div"
+  }, 
+  "post_mortem": {
+    "body": [
+      "post_mortem()$0"
+    ], 
+    "prefix": "post_mortem", 
+    "description": "post_mortem"
+  }, 
+  "logw": {
+    "body": [
+      "logger.warn(write_string('$1', $2), ${3:.logger_name})", 
+      "$0"
+    ], 
+    "prefix": "logw", 
+    "description": "logw"
+  }, 
+  "no_way": {
+    "body": [
+      "_no_way "
+    ], 
+    "prefix": "no_way", 
+    "description": "no_way"
+  }, 
+  "save_and_replace_method": {
+    "body": [
+      "sys!save_and_replace_method(${1:method_name}, ${2:new_method_proc_or_value},  ${3:optional private?})"
+    ], 
+    "prefix": "save_and_replace_method", 
+    "description": "save_and_replace_method"
+  }, 
+  "fast_elements": {
+    "body": [
+      "fast_elements()$0"
+    ], 
+    "prefix": "fe", 
+    "description": "fast_elements"
+  }, 
+  "w-star": {
+    "body": [
+      "write('*** ', $1, ' ***')$0"
+    ], 
+    "prefix": "w-star", 
+    "description": "w-star"
+  }, 
+  "logd": {
+    "body": [
+      "logger.debug(write_string('$1', $2), ${3:.logger_name})", 
+      "$0"
+    ], 
+    "prefix": "logd", 
+    "description": "logd"
+  }, 
+  "allresults": {
+    "body": [
+      "_allresults "
+    ], 
+    "prefix": "allresults", 
+    "description": "allresults"
+  }, 
+  "module_dialog": {
+    "body": [
+      "sw_module_dialog.open()"
+    ], 
+    "prefix": "smd", 
+    "description": "module_dialog"
+  }, 
+  "lds": {
+    "body": [
+      "gis_program_manager.cached_dataset(:land)"
+    ], 
+    "prefix": "lds", 
+    "description": "lds"
+  }, 
+  "logi": {
+    "body": [
+      "logger.info(write_string('$1', $2), ${3:.logger_name})", 
+      "$0"
+    ], 
+    "prefix": "logi", 
+    "description": "logi"
+  }, 
+  "try": {
+    "body": [
+      "_try _with ${1:cond}", 
+      "\t$2", 
+      "_when ${3:error}", 
+      "\t$4", 
+      "_endtry", 
+      ""
+    ], 
+    "prefix": "try", 
+    "description": "try"
+  }, 
+  "xor": {
+    "body": [
+      "_xor ($1)$0"
+    ], 
+    "prefix": "xor", 
+    "description": "xor"
+  }, 
+  "for": {
+    "body": [
+      "_for ${1:a_val} _over ${2:collections}.${3:fast_elements}()$4", 
+      "_loop", 
+      "\t$5", 
+      "_endloop", 
+      "$0"
+    ], 
+    "prefix": "for", 
+    "description": "for"
+  }, 
+  "deep_copy": {
+    "body": [
+      "deep_copy()$0"
+    ], 
+    "prefix": "deep_copy", 
+    "description": "deep_copy"
+  }, 
+  "ancestor_parents": {
+    "body": [
+      "ancestor_parents$0"
+    ], 
+    "prefix": "ancestor_parents", 
+    "description": "ancestor_parents"
+  }, 
+  "inherits_from": {
+    "body": [
+      "inherits_from?(${1:thing})"
+    ], 
+    "prefix": "inherits_from", 
+    "description": "inherits_from"
+  }, 
+  "show_on": {
+    "body": [
+      "show_on(${1:a_stream})$0"
+    ], 
+    "prefix": "show_on", 
+    "description": "show_on"
+  }, 
+  "product_directory": {
+    "body": [
+      "smallworld_product.product(:${1:product_name}).directory$0"
+    ], 
+    "prefix": "product_directory", 
+    "description": "product_directory"
+  }, 
+  "send_error": {
+    "body": [
+      "sys!send_error(${1:selector}, ${2:method_table}, ${3:private?}, ${4:error}, ${5:args})"
+    ], 
+    "prefix": "send_error", 
+    "description": "send_error"
+  }, 
+  "print": {
+    "body": [
+      "print($1)$0"
+    ], 
+    "prefix": "p", 
+    "description": "print"
+  }, 
+  "new": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      "_method ${4:class_name}.new(${6:arg1}, $7)", 
+      "\t##", 
+      "\t## ${8:exemplar new method} ", 
+      "\t##", 
+      "\t## Input parameters:", 
+      "\t## ${6:arg1} - $9 ", 
+      "\t## $10 ", 
+      "", 
+      "\t_return _clone.init(${6:arg1}, $7)", 
+      "_endmethod", 
+      "\\$", 
+      ""
+    ], 
+    "prefix": "method", 
+    "description": "new"
+  }, 
+  "proc": {
+    "body": [
+      "${1:variable} << _proc@${2:name}(${3:args})", 
+      "\t\t$4", 
+      "\t_endproc"
+    ], 
+    "prefix": "proc", 
+    "description": "proc"
+  }, 
+  "metadata": {
+    "body": [
+      "metadata(${1:key})"
+    ], 
+    "prefix": "metadata", 
+    "description": "metadata"
+  }, 
+  "veto_change": {
+    "body": [
+      "veto_change?(who_wants_to_change,what_to_change,change_info, gather more_change_info)"
+    ], 
+    "prefix": "veto_change", 
+    "description": "veto_change"
+  }, 
+  "gpm": {
+    "body": [
+      "gis_program_manager"
+    ], 
+    "prefix": "gpm", 
+    "description": "gpm"
+  }, 
+  "equality_rope": {
+    "body": [
+      "equality_rope.new()"
+    ], 
+    "prefix": "erp", 
+    "description": "equality_rope"
+  }, 
+  "is_class_or_direct_subclass_of": {
+    "body": [
+      "is_class_or_direct_subclass_of?(${1:an_object})"
+    ], 
+    "prefix": "is_class_or_direct_subclass_of", 
+    "description": "is_class_or_direct_subclass_of"
+  }, 
+  "protection": {
+    "body": [
+      "_protection "
+    ], 
+    "prefix": "protection", 
+    "description": "protection"
+  }, 
+  "ifele": {
+    "body": [
+      "_if ${1:condition1}", 
+      "_then", 
+      "\t$2", 
+      "_elif ${3:condition2}", 
+      "_then", 
+      "\t$4", 
+      "_else", 
+      "\t$5", 
+      "_endif", 
+      "$0"
+    ], 
+    "prefix": "ifele", 
+    "description": "ifele"
+  }, 
+  "remex": {
+    "body": [
+      "remex(:$1)", 
+      "\\$", 
+      "$0"
+    ], 
+    "prefix": "remex", 
+    "description": "remex"
+  }, 
+  "module_name": {
+    "body": [
+      "module_name$0"
+    ], 
+    "prefix": "module_name", 
+    "description": "module_name"
+  }, 
+  "primitive_failed": {
+    "body": [
+      "primitive_failed(${1:selector}, ${2:optional condition_values})$0"
+    ], 
+    "prefix": "primitive_failed", 
+    "description": "primitive_failed"
+  }, 
+  "super": {
+    "body": [
+      "_super."
+    ], 
+    "prefix": "super", 
+    "description": "super"
+  }, 
+  "throw": {
+    "body": [
+      "_throw ${1:expression} _with ${2:val}", 
+      ""
+    ], 
+    "prefix": "throw", 
+    "description": "throw"
+  }, 
+  "wait": {
+    "body": [
+      "wait()$0"
+    ], 
+    "prefix": "wait", 
+    "description": "wait"
+  }, 
+  "fast_keys": {
+    "body": [
+      "fast_elements()$0"
+    ], 
+    "prefix": "fk", 
+    "description": "fast_keys"
+  }, 
+  "protect": {
+    "body": [
+      "_protect", 
+      "\t$1", 
+      "_protection$2", 
+      "\t$3", 
+      "_endprotect", 
+      ""
+    ], 
+    "prefix": "protect", 
+    "description": "protect"
+  }, 
+  "package": {
+    "body": [
+      "_package ${1:sw}", 
+      "\\$", 
+      "$0"
+    ], 
+    "prefix": "package", 
+    "description": "package"
+  }, 
+  "sview": {
+    "body": [
+      "gis_program_manager.scratch_view"
+    ], 
+    "prefix": "sview", 
+    "description": "sview"
+  }, 
+  "create_slot": {
+    "body": [
+      "{:${1:class_var_name}, ${2:_unset}, :${3:writable}},$0"
+    ], 
+    "prefix": "create_slot", 
+    "description": "create_slot"
+  }, 
+  "immediate_children": {
+    "body": [
+      "immediate_children$0"
+    ], 
+    "prefix": "immediate_children", 
+    "description": "immediate_children"
+  }, 
+  "perform_with_vector": {
+    "body": [
+      "perform_with_vector(${1:selector},${2:arg_vector})"
+    ], 
+    "prefix": "perform_with_vector", 
+    "description": "perform_with_vector"
+  }, 
+  "loopbody": {
+    "body": [
+      "_loopbody "
+    ], 
+    "prefix": "loopbody", 
+    "description": "loopbody"
+  }, 
+  "method_table": {
+    "body": [
+      "method_table$0"
+    ], 
+    "prefix": "method_table", 
+    "description": "method_table"
+  }, 
+  "is_a_datastore_object": {
+    "body": [
+      "is_a_datastore_object?$0"
+    ], 
+    "prefix": "is_a_datastore_object", 
+    "description": "is_a_datastore_object"
+  }, 
+  "inheriting_children": {
+    "body": [
+      "inheriting_children$0"
+    ], 
+    "prefix": "inheriting_children", 
+    "description": "inheriting_children"
+  }, 
+  "or": {
+    "body": [
+      "_or ($1)$0"
+    ], 
+    "prefix": "or", 
+    "description": "or"
+  }, 
+  "block": {
+    "body": [
+      "_block ${1:@label}", 
+      "\t${2}", 
+      "_endblock", 
+      "$0"
+    ], 
+    "prefix": "block", 
+    "description": "block"
+  }, 
+  "andif": {
+    "body": [
+      "_andif ($1)$0"
+    ], 
+    "prefix": "andif", 
+    "description": "andif"
+  }, 
+  "appication": {
+    "body": [
+      "smallworld_product.application(:${1:npcl_sweo_dm_user})$0"
+    ], 
+    "prefix": "app", 
+    "description": "appication"
+  }, 
+  "with_locking": {
+    "body": [
+      "_protect _locking ${1:expression}", 
+      "\t$2", 
+      "_protection$2", 
+      "\t$4", 
+      "_endprotect", 
+      ""
+    ], 
+    "prefix": "protect", 
+    "description": "with_locking"
+  }, 
+  "class_name": {
+    "body": [
+      "class_name$0"
+    ], 
+    "prefix": "class_name", 
+    "description": "class_name"
+  }, 
+  "has_dependents": {
+    "body": [
+      "has_dependents?(${1:aspect})"
+    ], 
+    "prefix": "has_dependents", 
+    "description": "has_dependents"
+  }, 
+  "w-hash": {
+    "body": [
+      "write('### ', $1, ' ###')$0"
+    ], 
+    "prefix": "w-hash", 
+    "description": "w-hash"
+  }, 
+  "yourself": {
+    "body": [
+      "yourself$0"
+    ], 
+    "prefix": "yourself", 
+    "description": "yourself"
+  }, 
+  "get_ns": {
+    "body": [
+      ".read_stream().get_n(${1:10})$0"
+    ], 
+    "prefix": "get_ns", 
+    "description": "get_ns"
+  }, 
+  "notify": {
+    "body": [
+      "notify(${1:all?})"
+    ], 
+    "prefix": "notify", 
+    "description": "notify"
+  }, 
+  "false": {
+    "body": [
+      "_false"
+    ], 
+    "prefix": "false", 
+    "description": "false"
+  }, 
+  "property_list.new": {
+    "body": [
+      "property_list.new()"
+    ], 
+    "prefix": "pln", 
+    "description": "property_list.new"
+  }, 
+  "define_metadata": {
+    "body": [
+      "define_metadata(${1:key},${2:value})"
+    ], 
+    "prefix": "define_metadata", 
+    "description": "define_metadata"
+  }, 
+  "orif": {
+    "body": [
+      "_orif ($1)$0"
+    ], 
+    "prefix": "orif", 
+    "description": "orif"
+  }, 
+  "quit": {
+    "body": [
+      "quit()"
+    ], 
+    "prefix": "quit", 
+    "description": "quit"
+  }, 
+  "special_error_log": {
+    "body": [
+      "_local ${1:tag} << \"${2:error}\".copy()", 
+      "(${3:cond}, ${4:traceback_proc}) <<", 
+      "_catch ${1:tag}", 
+      "\t_handling ${2:error}", 
+      "\t_with throw_proc_with_captured_traceback(${1:tag})", 
+      "\t$7", 
+      "", 
+      "_endcatch", 
+      "_if ${3:cond} _isnt _unset", 
+      "_then", 
+      "\t${5:logger_obj}.add_error_log(\"${6:msg}\", ${3:cond}, ${4:traceback_proc})", 
+      "_endif", 
+      "$0"
+    ], 
+    "prefix": "catch", 
+    "description": "special_error_log"
+  }, 
+  "putenv": {
+    "body": [
+      "system.putenv('$1', '$2')$0"
+    ], 
+    "prefix": "putenv", 
+    "description": "putenv"
+  }, 
+  "optional": {
+    "body": [
+      "_optional "
+    ], 
+    "prefix": "optional", 
+    "description": "optional"
+  }, 
+  "print_ancestry": {
+    "body": [
+      "print_ancestry($1)$0"
+    ], 
+    "prefix": "pa", 
+    "description": "print_ancestry"
+  }, 
+  "is_class_of": {
+    "body": [
+      "is_class_of?(${1:another})"
+    ], 
+    "prefix": "is_class_of", 
+    "description": "is_class_of"
+  }, 
+  "encode": {
+    "body": [
+      "#% text_encoding = ${1:iso8859_1}", 
+      "$0"
+    ], 
+    "prefix": "encode", 
+    "description": "encode"
+  }, 
+  "is_kind_of": {
+    "body": [
+      "is_kind_of?(${1:thing})"
+    ], 
+    "prefix": "is_kind_of", 
+    "description": "is_kind_of"
+  }, 
+  "print_attributes_on": {
+    "body": [
+      "print_attributes_on(${1:a_stream})"
+    ], 
+    "prefix": "print_attributes_on", 
+    "description": "print_attributes_on"
+  }, 
+  "admin_engine": {
+    "body": [
+      "swg_dsn_admin_engine"
+    ], 
+    "prefix": "eng", 
+    "description": "admin_engine"
+  }, 
+  "else": {
+    "body": [
+      "_else", 
+      "\t"
+    ], 
+    "prefix": "else", 
+    "description": "else"
+  }, 
+  "active_design": {
+    "body": [
+      "swg_dsn_admin_engine.active_design"
+    ], 
+    "prefix": "dsn", 
+    "description": "active_design"
+  }, 
+  "pragma": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      ""
+    ], 
+    "prefix": "pragma", 
+    "description": "pragma"
+  }, 
+  "catch": {
+    "body": [
+      "_catch ${1:@label}", 
+      "$2", 
+      "_endcatch", 
+      "$0"
+    ], 
+    "prefix": "catch", 
+    "description": "catch"
+  }, 
+  "copy": {
+    "body": [
+      "copy()$0"
+    ], 
+    "prefix": "copy", 
+    "description": "copy"
+  }, 
+  "true": {
+    "body": [
+      "_true"
+    ], 
+    "prefix": "true", 
+    "description": "true"
+  }, 
+  "remove_method": {
+    "body": [
+      "remove_method(name)"
+    ], 
+    "prefix": "remove_method", 
+    "description": "remove_method"
+  }, 
+  "electric_dataset": {
+    "body": [
+      "gis_program_manager.cached_dataset(:electric)$0"
+    ], 
+    "prefix": "eds", 
+    "description": "electric_dataset"
+  }, 
+  "equality_property_list": {
+    "body": [
+      "equality_property_list.new()"
+    ], 
+    "prefix": "epl", 
+    "description": "equality_property_list"
+  }, 
+  "current_alternative_details": {
+    "body": [
+      "current_alternative_details$0"
+    ], 
+    "prefix": "cad", 
+    "description": "current_alternative_details"
+  }, 
+  "load_file_list": {
+    "body": [
+      "load_file_list('${1:dir_name}')$0"
+    ], 
+    "prefix": "load_file_list", 
+    "description": "load_file_list"
+  }, 
+  "record_insert": {
+    "body": [
+      "${1:rt} << record_transaction.new_insert(${2:coll}, ${3:plist})$0"
+    ], 
+    "prefix": "rt", 
+    "description": "record_insert"
+  }, 
+  "as_symbol": {
+    "body": [
+      "as_symbol()$0"
+    ], 
+    "prefix": "as_symbol", 
+    "description": "as_symbol"
+  }, 
+  "write_on": {
+    "body": [
+      "write_on(${1:a_stream})$0"
+    ], 
+    "prefix": "write_on", 
+    "description": "write_on"
+  }, 
+  "rope": {
+    "body": [
+      "rope.new()"
+    ], 
+    "prefix": "rope", 
+    "description": "rope"
+  }, 
+  "equality_set": {
+    "body": [
+      "equality_set.new()"
+    ], 
+    "prefix": "eset", 
+    "description": "equality_set"
+  }, 
+  "loge": {
+    "body": [
+      "logger.error(write_string('$1', $2), ${3:.logger_name})", 
+      "$0"
+    ], 
+    "prefix": "loge", 
+    "description": "loge"
+  }, 
+  "error": {
+    "body": [
+      "error(${1:_gather} ${2:args})$0"
+    ], 
+    "prefix": "error", 
+    "description": "error"
+  }, 
+  "scatter": {
+    "body": [
+      "_scatter ${1:vector}$0"
+    ], 
+    "prefix": "scatter", 
+    "description": "scatter"
+  }, 
+  "loop": {
+    "body": [
+      "_loop", 
+      "\t$1", 
+      "_endloop", 
+      ""
+    ], 
+    "prefix": "loop", 
+    "description": "loop"
+  }, 
+  "and": {
+    "body": [
+      "_and ($1)$0"
+    ], 
+    "prefix": "and", 
+    "description": "and"
+  }, 
+  "as_sliced_string": {
+    "body": [
+      "as_sliced_string(${1:length}, ${2:_true})$0"
+    ], 
+    "prefix": "as_sliced_string", 
+    "description": "as_sliced_string"
+  }, 
+  "write_string()": {
+    "body": [
+      "write_string('$1', $2)$0"
+    ], 
+    "prefix": "ws", 
+    "description": "write_string()"
+  }, 
+  "database_pool_in_use": {
+    "body": [
+      "_handling dataset_pool_in_use", 
+      "_with _proc@suppressproc() _endproc$0"
+    ], 
+    "prefix": "handling", 
+    "description": "database_pool_in_use"
+  }, 
+  "lock": {
+    "body": [
+      "_lock ${1:expression}", 
+      "$2", 
+      "_endlock", 
+      ""
+    ], 
+    "prefix": "lock", 
+    "description": "lock"
+  }, 
+  "abstract": {
+    "body": [
+      "_abstract "
+    ], 
+    "prefix": "abstract", 
+    "description": "abstract"
+  }, 
+  "have_post_mortem": {
+    "body": [
+      "have_post_mortem(${1:yes?})"
+    ], 
+    "prefix": "have_post_mortem", 
+    "description": "have_post_mortem"
+  }, 
+  "equality_geometry_set": {
+    "body": [
+      "equality_geometry_set.new()"
+    ], 
+    "prefix": "egs", 
+    "description": "equality_geometry_set"
+  }, 
+  "prt": {
+    "body": [
+      "print($1)$0"
+    ], 
+    "prefix": "prt", 
+    "description": "prt"
+  }, 
+  "apropos": {
+    "body": [
+      "apropos(\"$1\", ${2:_true}, ${3:_true})"
+    ], 
+    "prefix": "apropos", 
+    "description": "apropos"
+  }, 
+  "an_element()": {
+    "body": [
+      "an_element()$0"
+    ], 
+    "prefix": "ae", 
+    "description": "an_element()"
+  }, 
+  "if": {
+    "body": [
+      "_if ${1:condition}", 
+      "_then", 
+      "\t$2", 
+      "_endif", 
+      "$0"
+    ], 
+    "prefix": "if", 
+    "description": "if"
+  }, 
+  "exemplar_global": {
+    "body": [
+      "exemplar_global$0"
+    ], 
+    "prefix": "exemplar_global", 
+    "description": "exemplar_global"
+  }, 
+  "recursive": {
+    "body": [
+      "_recursive "
+    ], 
+    "prefix": "recursive", 
+    "description": "recursive"
+  }, 
+  "print_string": {
+    "body": [
+      "print_string$0"
+    ], 
+    "prefix": "print_string", 
+    "description": "print_string"
+  }, 
+  "do_deep_copy": {
+    "body": [
+      "do_deep_copy()$0"
+    ], 
+    "prefix": "do_deep_copy", 
+    "description": "do_deep_copy"
+  }, 
+  "self": {
+    "body": [
+      "_self"
+    ], 
+    "prefix": "self", 
+    "description": "self"
+  }, 
+  "when": {
+    "body": [
+      "_when ${1:error}$0"
+    ], 
+    "prefix": "when", 
+    "description": "when"
+  }, 
+  "debug_print_on": {
+    "body": [
+      "debug_print_on(${1:a_stream})"
+    ], 
+    "prefix": "debug_print_on", 
+    "description": "debug_print_on"
+  }, 
+  "cis_dataset": {
+    "body": [
+      "gis_program_manager.cached_dataset(:cis)$0"
+    ], 
+    "prefix": "cds", 
+    "description": "cis_dataset"
+  }, 
+  "snippet": {
+    "body": [
+      "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
+      "_method ${4:class_name}.${5:method_name}(${6:arg1}, $7)", 
+      "\t##", 
+      "\t## ${8:method description} ", 
+      "\t##", 
+      "\t## Input parameters:", 
+      "\t## ${6:arg1} - $9 ", 
+      "\t## $10 ", 
+      "", 
+      "\t$0", 
+      "_endmethod", 
+      "\\$", 
+      ""
+    ], 
+    "prefix": "method", 
+    "description": "snippet"
+  }, 
+  "default": {
+    "body": [
+      "default($1)$0"
+    ], 
+    "prefix": "default", 
+    "description": "default"
+  }, 
+  "start_app": {
+    "body": [
+      "start_application_manager()$0"
+    ], 
+    "prefix": "start_app", 
+    "description": "start_app"
+  }, 
+  "raise a condition": {
+    "body": [
+      "condition.raise(:${1:error}, :${2:string}, \"${3:message}$4\")", 
+      "$0"
+    ], 
+    "prefix": "condraise", 
+    "description": "raise a condition"
+  }, 
+  "perform_message": {
+    "body": [
+      "perform_message(${1:a_message})"
+    ], 
+    "prefix": "perform_message", 
+    "description": "perform_message"
+  }, 
+  "product_name": {
+    "body": [
+      "product_name$0"
+    ], 
+    "prefix": "product_name", 
+    "description": "product_name"
+  }, 
+  "ifel": {
+    "body": [
+      "_if ${1:condition1}", 
+      "_then", 
+      "\t$2", 
+      "_elif ${3:condition2}", 
+      "_then", 
+      "\t$4", 
+      "_endif", 
+      "$0"
+    ], 
+    "prefix": "ifel", 
+    "description": "ifel"
+  }, 
+  "w-minus": {
+    "body": [
+      "write('--- ', $1, ' ---')$0"
+    ], 
+    "prefix": "w-minus", 
+    "description": "w-minus"
+  }, 
+  "assignment": {
+    "body": [
+      "eds << gis_program_manager.cached_dataset(:electric)$0"
+    ], 
+    "prefix": "eds", 
+    "description": "assignment"
+  }, 
+  "clone": {
+    "body": [
+      "_clone "
+    ], 
+    "prefix": "clone", 
+    "description": "clone"
+  }, 
+  "endif": {
+    "body": [
+      "_endif", 
+      ""
+    ], 
+    "prefix": "endif", 
+    "description": "endif"
+  }, 
+  "record_delete": {
+    "body": [
+      "${1:rt} << record_transaction.new_update(${2:obj})$0"
+    ], 
+    "prefix": "rt", 
+    "description": "record_delete"
+  }, 
+  "record_update": {
+    "body": [
+      "${1:rt} << record_transaction.new_update(${2:obj}, ${3:plist})$0"
+    ], 
+    "prefix": "rt", 
+    "description": "record_update"
+  }, 
+  "gpmds": {
+    "body": [
+      "gis_program_manager.cached_dataset(:${1:gis})$0"
+    ], 
+    "prefix": "gpmds", 
+    "description": "gpmds"
+  }, 
+  "print_hierarchy": {
+    "body": [
+      "print_hierarchy($1)$0"
+    ], 
+    "prefix": "ph", 
+    "description": "print_hierarchy"
+  }, 
+  "getenv": {
+    "body": [
+      "system.getenv('$1')$0"
+    ], 
+    "prefix": "getenv", 
+    "description": "getenv"
+  }, 
+  "sdae": {
+    "body": [
+      "swg_dsn_admin_engine"
+    ], 
+    "prefix": "sdae", 
+    "description": "sdae"
+  }, 
+  "maybe": {
+    "body": [
+      "_maybe "
+    ], 
+    "prefix": "maybe", 
+    "description": "maybe"
+  }, 
+  "gather": {
+    "body": [
+      "_gather "
+    ], 
+    "prefix": "gather", 
+    "description": "gather"
+  }, 
+  "perform": {
+    "body": [
+      "perform(${1:selector}, $2)$0"
+    ], 
+    "prefix": "perform", 
+    "description": "perform"
+  }, 
+  "write": {
+    "body": [
+      "write($1)$0"
+    ], 
+    "prefix": "w", 
+    "description": "write"
+  }, 
+  "debug_print": {
+    "body": [
+      "debug_print($1)$0"
+    ], 
+    "prefix": "dp", 
+    "description": "debug_print"
+  }, 
+  "sw_mod": {
+    "body": [
+      "sw_modue_dialog.open()"
+    ], 
+    "prefix": "sw_mod", 
+    "description": "sw_mod"
+  }, 
+  "species": {
+    "body": [
+      "species$0"
+    ], 
+    "prefix": "species", 
+    "description": "species"
+  }, 
+  "unset": {
+    "body": [
+      "_unset"
+    ], 
+    "prefix": "unset", 
+    "description": "unset"
+  }
+}
