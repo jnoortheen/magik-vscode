@@ -15,6 +15,10 @@ _method class_name.new(arg1, )
 _endmethod
 $
 
+_block @label
+	sdf
+_endblock
+
 _pragma(classify_level=basic, topic={basic}, usage={basic})
 _iter _method class_name.method_name(arg1, )
 	##
@@ -62,3 +66,17 @@ print()
 list[1]
 
 'single quoted string'
+
+_pragma(classify_level=basic, topic={basic}, usage={basic})
+_method class_name.method_name(arguments, arg2)
+	##
+	## docstring 
+	##
+	## Input parameters:
+	## arguments -  
+	##  
+
+	method body
+	_self.
+_endmethod
+$

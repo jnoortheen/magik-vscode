@@ -96,7 +96,7 @@
     "prefix": "isnt", 
     "description": "isnt"
   }, 
-  "gds": {
+  "gis dataset from gis_program_manager": {
     "body": [
       "gis_program_manager.cached_dataset(:gis)"
     ], 
@@ -121,7 +121,7 @@
     "prefix": "conddefine", 
     "description": "define_condition_class"
   }, 
-  "finally": {
+  "finally with a value": {
     "body": [
       "_finally _with ${2:val}", 
       "$0"
@@ -145,7 +145,7 @@
     "prefix": "define_shared_variable", 
     "description": "define_shared_variable"
   }, 
-  "with": {
+  "with condition": {
     "body": [
       "_with ${1:cond}$0"
     ], 
@@ -160,7 +160,7 @@
     "prefix": "continuewith", 
     "description": "continuewith"
   }, 
-  "w-plus": {
+  "write plus surrounded": {
     "body": [
       "write('+++ ', $1, ' +++')$0"
     ], 
@@ -174,7 +174,7 @@
     "prefix": "naturally_ordered", 
     "description": "naturally_ordered"
   }, 
-  "init": {
+  "init method snippet": {
     "body": [
       "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
       "_method ${4:class_name}.init(${6:arg1}, $7)", 
@@ -206,7 +206,7 @@
       "method(${1:name})$0"
     ], 
     "prefix": "method", 
-    "description": "method(name)"
+    "description": "return method defined on an object"
   }, 
   "constant": {
     "body": [
@@ -279,14 +279,14 @@
     "prefix": "identity_hash", 
     "description": "identity_hash"
   }, 
-  "gpmdscoll": {
+  "a collection from gis_program_manager": {
     "body": [
       "gis_program_manager.cached_dataset(:${1:gis}).collections[:${2:sheath}]$0"
     ], 
     "prefix": "gpmdscoll", 
     "description": "gpmdscoll"
   }, 
-  "handling": {
+  "handling with a proc snippet": {
     "body": [
       "_handling ${1:error}", 
       "_with _proc(${3:cond})", 
@@ -338,7 +338,7 @@
     "prefix": "trace_on", 
     "description": "trace_on"
   }, 
-  "fixme": {
+  "fixme snippet": {
     "body": [
       "# FIXME ${1:issue} added by ${2:tester_name} on ${3:01}/${4:06}/${5:2016}", 
       "$0"
@@ -367,7 +367,7 @@
     "prefix": "leave", 
     "description": "leave"
   }, 
-  "ife": {
+  "if else block": {
     "body": [
       "_if ${1:condition}", 
       "_then", 
@@ -420,7 +420,7 @@
     "prefix": "post_mortem", 
     "description": "post_mortem"
   }, 
-  "logw": {
+  "log warning": {
     "body": [
       "logger.warn(write_string('$1', $2), ${3:.logger_name})", 
       "$0"
@@ -449,14 +449,14 @@
     "prefix": "fe", 
     "description": "fast_elements"
   }, 
-  "w-star": {
+  "write surrounded with star": {
     "body": [
       "write('*** ', $1, ' ***')$0"
     ], 
     "prefix": "w-star", 
     "description": "w-star"
   }, 
-  "logd": {
+  "log debug message": {
     "body": [
       "logger.debug(write_string('$1', $2), ${3:.logger_name})", 
       "$0"
@@ -478,14 +478,14 @@
     "prefix": "smd", 
     "description": "module_dialog"
   }, 
-  "lds": {
+  "land dataset": {
     "body": [
       "gis_program_manager.cached_dataset(:land)"
     ], 
     "prefix": "lds", 
     "description": "lds"
   }, 
-  "logi": {
+  "log info message": {
     "body": [
       "logger.info(write_string('$1', $2), ${3:.logger_name})", 
       "$0"
@@ -614,7 +614,7 @@
     "prefix": "veto_change", 
     "description": "veto_change"
   }, 
-  "gpm": {
+  "gis_program_manager": {
     "body": [
       "gis_program_manager"
     ], 
@@ -642,7 +642,7 @@
     "prefix": "protection", 
     "description": "protection"
   }, 
-  "ifele": {
+  "if elif else block": {
     "body": [
       "_if ${1:condition1}", 
       "_then", 
@@ -658,7 +658,7 @@
     "prefix": "ifele", 
     "description": "ifele"
   }, 
-  "remex": {
+  "remove exemplar ": {
     "body": [
       "remex(:$1)", 
       "\\$", 
@@ -1280,7 +1280,7 @@
     "prefix": "cds", 
     "description": "cis_dataset"
   }, 
-  "snippet": {
+  "method with pragma snippet": {
     "body": [
       "_pragma(classify_level=${1:basic}, topic={${2:basic}}, usage={${3:basic}})", 
       "_method ${4:class_name}.${5:method_name}(${6:arg1}, $7)", 
@@ -1335,7 +1335,7 @@
     "prefix": "product_name", 
     "description": "product_name"
   }, 
-  "ifel": {
+  "if elif statement": {
     "body": [
       "_if ${1:condition1}", 
       "_then", 
@@ -1349,14 +1349,14 @@
     "prefix": "ifel", 
     "description": "ifel"
   }, 
-  "w-minus": {
+  "write statement surrounded with minus": {
     "body": [
       "write('--- ', $1, ' ---')$0"
     ], 
     "prefix": "w-minus", 
     "description": "w-minus"
   }, 
-  "assignment": {
+  "gis dataset assignment": {
     "body": [
       "eds << gis_program_manager.cached_dataset(:electric)$0"
     ], 
@@ -1441,7 +1441,7 @@
     "prefix": "perform", 
     "description": "perform"
   }, 
-  "write": {
+  "write statement": {
     "body": [
       "write($1)$0"
     ], 
