@@ -22,9 +22,9 @@ Smallworld Magik language extension for VS Code.
 
 ### Syntax Definition 
 
-[Textmate manual](http://manual.macromates.com/en/)
-[Texmate Language Grammar](http://manual.macromates.com/en/language_grammars#naming_conventions)
-[Sublime Text Re](https://github.com/dmikalova/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet)
-[Texmate Re](http://manual.macromates.com/en/regular_expressions#syntax_oniguruma)
-[Texmate Language Rules](http://manual.macromates.com/en/language_grammars#language_rules)
-[Regexr](http://www.regexr.com/)
+- [Textmate manual](http://manual.macromates.com/en/)
+- [Texmate Language Grammar](http://manual.macromates.com/en/language_grammars#naming_conventions)
+- [Sublime Text Re](https://github.com/dmikalova/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet)
+- [Texmate Re](http://manual.macromates.com/en/regular_expressions#syntax_oniguruma)
+- [Texmate Language Rules](http://manual.macromates.com/en/language_grammars#language_rules)
+- [Regexr](http://www.regexr.com/)
