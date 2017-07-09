@@ -1,6 +1,7 @@
 # MagikWand
 
 Smallworld Magik language extension for VS Code.
+![NJN Magik Wand](img/njn_magik_wand_snippets.gif)
 
 ## Installation From Repository
 
